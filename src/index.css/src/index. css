@@ -1,0 +1,155 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #090611;
+  color: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+}
+
+button, textarea {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 30px 7%;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #292039;
+}
+
+.topbar h2 {
+  font-size: 25px;
+  letter-spacing: 2px;
+}
+
+.topbar h2 span,
+.welcome h1 span {
+  color: #a78bfa;
+}
+
+.status {
+  color: #b9a4ed;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.welcome {
+  margin: 75px 0 45px;
+}
+
+.eyebrow {
+  color: #a78bfa;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.welcome h1 {
+  font-size: clamp(35px, 6vw, 60px);
+  margin-bottom: 15px;
+}
+
+.welcome > p:last-child {
+  color: #aaa1b9;
+  line-height: 1.6;
+}
+
+.tools {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.tool {
+  background: #171020;
+  border: 1px solid #30233f;
+  border-radius: 16px;
+  color: white;
+  text-align: left;
+  padding: 24px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.tool.active {
+  border-color: #9664f5;
+  background: #21152f;
+}
+
+.tool-icon {
+  font-size: 30px;
+}
+
+.tool small {
+  color: #a99fb5;
+  line-height: 1.5;
+}
+
+.workspace {
+  margin-top: 35px;
+  background: #171020;
+  border: 1px solid #30233f;
+  border-radius: 18px;
+  padding: 30px;
+}
+
+.workspace h2 {
+  margin-bottom: 20px;
+}
+
+.workspace textarea {
+  width: 100%;
+  min-height: 150px;
+  background: #090611;
+  color: white;
+  border: 1px solid #49365e;
+  border-radius: 12px;
+  padding: 18px;
+  resize: vertical;
+}
+
+.generate {
+  margin-top: 18px;
+  width: 100%;
+  padding: 16px;
+  border: 0;
+  border-radius: 10px;
+  background: #7138db;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  color: #766b82;
+  padding: 50px 0 20px;
+  font-size: 12px;
+}
+
+@media (max-width: 700px) {
+  .app {
+    padding: 22px 18px;
+  }
+
+  .tools {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome {
+    margin-top: 50px;
+  }
+}
