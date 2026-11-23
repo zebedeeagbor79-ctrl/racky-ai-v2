@@ -1,0 +1,52 @@
+
+import { useState } from 'react';
+
+const tools = [
+  { name: 'Design Studio', icon: '🎨', description: 'Create stunning AI flyers and graphics.' },
+  { name: 'Photo Lab', icon: '📸', description: 'Transform and edit your photos.' },
+  { name: 'Content Desk', icon: '✍️', description: 'Write captions, bios and adverts.' }
+];
+
+export default function App() {
+  const [activeTool, setActiveTool] = useState('Design Studio');
+
+  return (
+    <main className="app">
+      <header className="topbar">
+        <h2>RACKY <span>AI</span></h2>
+        <div className="status">CREATIVE STUDIO</div>
+      </header>
+
+      <section className="welcome">
+        <p className="eyebrow">WELCOME TO YOUR CREATIVE SPACE</p>
+        <h1>Make your ideas <span>iconic.</span></h1>
+        <p>Your imagination. Our intelligence. Unlimited possibilities.</p>
+      </section>
+
+      <section className="tools">
+        {tools.map(tool => (
+          <button
+            key={tool.name}
+            className={activeTool === tool.name ? 'tool active' : 'tool'}
+            onClick={() => setActiveTool(tool.name)}
+          >
+            <span className="tool-icon">{tool.icon}</span>
+            <strong>{tool.name}</strong>
+            <small>{tool.description}</small>
+          </button>
+        ))}
+      </section>
+
+      <section className="workspace">
+        <p className="eyebrow">YOUR WORKSPACE</p>
+        <h2>{activeTool}</h2>
+        <textarea placeholder={`Describe what you want to create with ${activeTool}...`} />
+        <button className="generate" onClick={() => alert('AI generation is coming soon!')}>
+          Generate with RACKY AI →
+        </button>
+      </section>
+
+      <footer>RACKY AI © 2026 · BUILT FOR CREATORS</footer>
+    </main>
+  );
+}
